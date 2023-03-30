@@ -1,0 +1,70 @@
+# User Story
+
+As a user of the application, I want to be able to anonymize data so that sensitive information is not revealed. The process of anonymization will involve authentication, selection of data source, configuration of data and the use of a privacy model.
+
+The following are the steps involved:
+
+
+## 1: User Authentication
+- The user needs to log in using the login page.
+- After successful login, the user will be redirected to the index page.
+
+
+## 2: Dashboard
+- The index page will contain a dashboard with two cards: Data Sources and Configurations.
+
+## 3: Data Sources
+- Clicking on the Data Sources card will redirect the user to the Data Sources page.
+- The Data Sources page will contain a list of all the data sources uploaded by the user.
+- The user can add or delete any data source from the server.
+
+## 4: Configurations
+- Clicking on the Configurations card from the index page will redirect the user to the Configurations page.
+- The Configurations page will contain a list of all the configurations created or uploaded by the user.
+- The user can create, upload or delete configurations.
+
+## 5: Anonymize Data
+- To anonymize the data, the user needs to go to the Anonymize page by clicking the 'Tool' tab on the left menu.
+- Click on the 'Anonymizer' icon in the submenu of the tool.
+- The Anonymize page will load up with a wizard containing Data Source and Configuration cards.
+
+## 6: Data Source
+- The user can select which type of data source to be used - CSV, XLS or JDBC.
+- For JDBC, the user needs to click on the "JDBC" button.
+- A form will be displayed in which the user needs to enter the details for database connection.
+- The form will contain URL, Username, Password and table name which consists of data that should be used to anonymize.
+- The user needs to follow the specified URL format, for example, database ID 'testdb' and the table is 'adult'.
+
+## 7: Configuration
+- The user can select the configurations from the drop-down menu or create a new configuration.
+- For creating a new configuration, the user needs to click the 'Create Configuration' button.
+- A table will be displayed consisting of the attributes (columns) from the respective data source that was selected.
+- For each attribute's information, a row will be given, so that the user needs to fill in.
+- The user needs to specify the file name at the top left corner.
+- For each attribute, the attribute type should be selected i.e SENSITIVE, INSENSITIVE, IDENTIFYING, QUASI IDENTIFYING.
+- Similarly, for data type, any of 'string', 'int' , 'dob' should be selected.
+- For uploading generalization hierarchy, the user needs to upload by clicking the 'choose file' button.
+- After filling out the form, the user needs to click the 'next' button on the top right side of the table.
+- Another form will be displayed, containing information related to the use of privacy model.
+
+## 8: Privacy Model
+- The user needs to fill out the form with information related to the use of privacy model.
+- The form will contain options for privacy models such as k-anonymity, l-diversity, t-closeness.
+- The user needs to select the appropriate privacy model and fill out the required fields.
+- After filling out the form, the user needs to click the 'Anonymize' button to start the process of anonymization.
+
+:::info
+The privacy model typically used for anonymization algorithms involves generalizing and suppressing Quasi-identifier (QID) attributes. One popular algorithm is k-anonymity, which requires each QID tuple to appear in at least k-1 records to prevent re-identification. Generalization replaces values with similar but redundant ones, while suppression involves not publishing a value at all. However, k-anonymity has a vulnerability called the Homogeneity attack, where sensitive information is equal for all k individuals.
+
+Another algorithm, l-diversity, requires high entropy on the distribution of sensitive attributes (SAs) for each QID. It balances dispersion of SAs between all groups in the dataset, providing trusted privacy against attacks even when collectors have no information about the attacker's level of knowledge. However, l-diversity is vulnerable to similarity attacks because it does not consider the semantic proximity of the values.
+
+A new algorithm called t-closeness emerged due to previous models' vulnerabilities. It requires the SA distribution in any equivalence class to be similar to the attributes distribution in the overall dataset, decreasing the chances of learning individual's information. T-closeness uses the Earth Mover Distance metric and defines intervals to introduce and manage gaps between values of SAs.
+
+Hierarchies are used to reduce the precision of attribute values, presenting data as intervals instead of simple values. They are used for categorical attributes and increase the utility of anonymized datasets. Hierarchies can be supplied by the user in CSV files, specifying the level of the hierarchy in the column headers and intervals or generalized attributes in the rows. The user needs to select a privacy model, such as k-anonymity, l-diversity, or t-closeness, and mention the suppression rate. After validating the data, the system generates a new configuration file in xml format that the user can select from the configuration card.
+:::
+
+
+## 9: Result
+- After filling out all the required information in the wizard, the user can click on the 'Anonymize' button to start the anonymization process.
+- The progress of the process will be displayed on the screen. Once the process is completed, the user will be redirected to the results page where the anonymized data will be displayed.
+- The user can download the anonymized data in CSV or XLS format (or ZIP) by clicking on the 'Download' button.
