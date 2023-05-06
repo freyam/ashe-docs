@@ -1,15 +1,19 @@
 ---
 sidebar_position: 1
 ---
-# ARX 
+
+# ARX
 
 ![](../tools/img/arx.png)
 
 Link: [ARX Data Anonymization Tool](https://arx.deidentifier.org/)
+
 ## Introduction
+
 ARX is a state-of-the-art data anonymization tool designed to help organizations comply with data protection regulations while enabling them to share and analyze their data. ARX was developed to provide a high-accuracy data anonymization solution that can be used in a wide range of applications, from scientific research to healthcare data management.
 
 ## Features
+
 Support multiple anonymization techniques, including k-anonymity, l-diversity, t-closeness, and b-likeness.
 ARX can be used for up to 50 dimensions, allowing for a high level of granularity when anonymizing data.
 ARX uses a combination of statistical and machine learning techniques to ensure high accuracy in the anonymization process. The tool uses data anonymization algorithms that are designed to minimize information loss while also providing robust privacy protection.
@@ -39,6 +43,6 @@ Research Projects: ARX is widely used in research projects to anonymize sensitiv
 
 Training Purposes: ARX can also be used for training purposes, to teach individuals about privacy protection and data anonymization methods.
 
-
 ## Conclusion
+
 ARX is a highly flexible and user-friendly data anonymization tool that provides robust privacy protection for organizations that need to share and analyze their data. With its support for multiple anonymization techniques and its ability to handle up to 50 dimensions, ARX is a powerful solution for data protection and data sharing. Additionally, its high accuracy and user-friendly graphical interface make it easy to use, even for users with little to no technical background.

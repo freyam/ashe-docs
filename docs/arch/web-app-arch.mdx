@@ -15,12 +15,15 @@ Aggregating all three tiers in a single framework simplifies the interconnection
 ![](../../static/img/arch/three-layer.png)
 
 ### Presentation Tier
+
 The Presentation Layer contains user-oriented functionalities and manages user interaction with the system. It acts as a bridge to the Business Layer and allows users to interact with the application. Typically, it consists of components such as HTML, CSS, JavaScript, and jQuery, which run on the client-side of the browser. The Presentation Layer communicates with the Business Layer through REST API (JAX-RS) and utilizes LocalStorage for temporary data storage.
 
 ### Business Tier
+
 The Business Tier implements the core functionality of the system and encapsulates the relevant business logic. It separates the execution of business rules from the user interface and data access. This layer typically consists of elements that execute rules and processes the data received from the Presentation Layer before passing it on to the Data Tier. The Business Tier communicates with the other layers through APIs and services.
 
 ### Data Tier
+
 The Data Tier provides access to the databases and storage devices used by the application. Its primary function is to retrieve data from the database and transform it into a suitable format for the rest of the application. It stores and retrieves information from the Business Tier for processing and ultimately provides it to the Presentation Tier. Typically, the Data Tier utilizes database management systems such as MySQL, MongoDB, or Cassandra to store and retrieve data.
 
 In some cases, such as when using the ARX API, there may not be a need to use a database, as saving the files locally may be sufficient to perform the anonymization process. However, the Data Tier still provides the necessary data retrieval and transformation functions required by the other layers.
