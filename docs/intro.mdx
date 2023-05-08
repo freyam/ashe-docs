@@ -77,24 +77,59 @@ The following requirements have been identified for the data anonymisation solut
 
 ## Activity Diagrams
 
+![image](https://user-images.githubusercontent.com/71231079/236909069-76e7b325-9d40-40aa-9444-ddc7f81a8d45.png)
+
+1. `Upload source data file`: The user uploads a source data file to the system. The file should be in csv format.
+
+2. `Parse attributes hierarchy and data types`: The system parses the uploaded data file to determine the hierarchy and data types of the attributes. The system set default automatic values for the data types/sensitivity types, or the user may manually specify them.
+
+3. `Load configuration`: The system loads the configuration specified by the user or uses default settings for anonymizing data. The configuration includes supression rate and model (k-anonymity, l-diversity, t-closeness).
+
+4. `Anonymize data`: The system anonymizes the data based on the parsed attributes hierarchy, data types, and configuration. This involves masking or transforming certain attributes or data types.
+
+5. `Download anonymized data file`: The anonymized data is downloaded by the user in the form of a file. The file is in csv format as the uploaded data file.
+
+6. `End`: The process ends. The system performs cleanup tasks, such as deleting temporary files or closing database connections.
+<!-- 
 ### User Authentication
 
 ![](../static/img/repr/activity-06.jpeg)
-![](../static/img/repr/activity-07.jpeg)
+![](../static/img/repr/activity-07.jpeg) -->
 
 ### User Configuration
 
-![](../static/img/repr/activity-01.jpeg)
+![image](https://user-images.githubusercontent.com/71231079/236910167-d95affbb-798e-4544-a05a-e7a1e2304574.png)
+
+The process begins with a `Start` node and includes the following steps:
+
+1. `Ask user to upload data file`: The system prompts the user to upload a data file. The system will then show the metadata along with data for the file
+
+2. `Validate file format`: The system checks whether the file format is valid. This may involve checking the file extension, file type header, and other file metadata.
+
+3. `Save file to server`: If the file format is valid, the system saves the file to the server. This involves creating a file in specified directory for the uploaded file and setting appropriate file permissions. 
+
+4. `Success`: If the file is saved successfully, it is a success and system provides options for the user to re-upload the file.
+
+5. `End`: The process ends. The system performs cleanup tasks, such as deleting temporary files or closing database connections.
 
 ### Data Upload
 
-![](../static/img/repr/activity-04.jpeg)
-![](../static/img/repr/activity-05.jpeg)
+![image](https://user-images.githubusercontent.com/71231079/236912533-a2a5c4d5-ff7b-4724-b474-1264b0c75e8e.png)
 
-### Data Validation
+1. `Ask user to upload data file:` The system prompts the user to upload a data file. This may involve displaying a web form with input fields for the file name, description, and metadata. The system also provides a file picker dialog for the user to select the file from their local file system.
+
+2. `Validate file format`: The system checks whether the file format is valid. This involves checking the file extension, file type header, and other file metadata. 
+
+3. `Save file to server`: If the file format is valid, the system saves the file to the server. This involvse creating a new file in specified directory for the uploaded file and setting appropriate file permissions. 
+
+4. `Display success message`: If the file is saved successfully, it is a success and involves redirecting the user to a new page.
+
+5. `End`: The process ends. The system performs cleanup tasks, such as deleting temporary files or closing database connections.
+
+<!-- ### Data Validation
 
 ![](../static/img/repr/activity-02.jpeg)
 
 ### Data Visualisation
 
-![](../static/img/repr/activity-03.jpeg)
+![](../static/img/repr/activity-03.jpeg) -->
