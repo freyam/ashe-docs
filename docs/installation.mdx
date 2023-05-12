@@ -4,34 +4,32 @@ sidebar_position: 6
 
 # Installation
 
-`React` is a popular JavaScript library used for building user interfaces. It was created and is maintained by Facebook, and has become a go-to choice for web developers because of its ability to create reusable UI components, its high performance, and its ability to render components on both the server and client side. At Ashe , we have also leveraged the power of React in our frontend development. We use React to build modern, interactive, and responsive applications with a high degree of scalability and maintainability. React allows us to create complex UIs with ease by breaking the interface into smaller components. With React, we can reuse components throughout our application, making it easier to manage and update our frontend code.
+- `React` is a popular JavaScript library used for building user interfaces. It was created and is maintained by Facebook, and has become a go-to choice for web developers because of its ability to create reusable UI components, its high performance, and its ability to render components on both the server and client side. At Ashe , we have also leveraged the power of React in our frontend development. We use React to build modern, interactive, and responsive applications with a high degree of scalability and maintainability. React allows us to create complex UIs with ease by breaking the interface into smaller components. With React, we can reuse components throughout our application, making it easier to manage and update our frontend code.
 
-## Frontend
+- In addition to using React, we have also adopted Docker in our development process. Docker is a containerization platform that allows us to package applications and their dependencies into portable containers, which can then be easily deployed to different environments. By using Docker, we can ensure that our applications run consistently across different machines, and we can also reduce the risk of compatibility issues that can arise from differences in operating systems and other system configurations.
 
-1. Make sure you have Node.js and npm (Node Package Manager) installed on your system. You can check if they are already installed by running the following commands in your terminal:
+- One of the main benefits of Docker is its ability to simplify the deployment process. With Docker, we can package an entire application, along with its dependencies, into a single container that can be easily moved from one environment to another. This means that we can develop and test our applications locally and then deploy them to production environments without worrying about compatibility issues or other deployment-related problems.
 
-   `node -v`.
+- Another benefit of Docker is its scalability. Because Docker containers are lightweight and can be easily deployed to different environments, we can quickly scale our applications up or down based on demand. This allows us to optimize our infrastructure usage and reduce costs, while also ensuring that our applications are always responsive and available to users.
 
-   We used `v19.8.1` for this project.
+Overall, the combination of React and Docker has been a powerful toolset for our development. With these technologies, we can build modern, scalable, and maintainable applications that can be easily deployed and managed across different environments.
 
-   `npm -v`.
+## Running the Application
 
-   We used `8.3.0` for this project.
-   If any of these commands fail, you can install Node.js and npm from [here](https://nodejs.org/en/download/).
+To set up and run the project, please follow these steps:
 
-2. Clone the repository to your local machine using the following command:
-   `git clone https://github.com/VanSHOE/Ashe`
+1. Ensure that you have Docker installed on your machine. If you do not have Docker installed, please follow the instructions provided at https://docs.docker.com/get-docker/.
 
-3. Navigate to the project directory:
-   `cd IIIT_H_Anonymization/frontend`
+2. Clone the repository by running the following command: `git clone https://github.com/freyam/Ashe`.
 
-4. Install the required dependencies:
-   `npm install`
+3. Navigate to the root directory of the project and run the following command: `docker-compose up`.
 
-5. Run the project:
-   `npm start`
-6. The project should now be running on `localhost:3000`.
+4. Once the above command completes successfully, the frontend will be accessible at `localhost:3000`, and the backend will be accessible at `localhost:8000`.
 
-## Backend
+5. To access both the frontend and backend, you can simply go to `localhost` without specifying any port number, as we have set up Nginx for easy access.
 
-We utilized various backend technologies to build a scalable and efficient web application. We used the ARX Java API to anonymize sensitive data, and built a Maven project with all the necessary dependencies. For creating RESTful APIs, we used Jersey, which is a popular Java framework. To deploy our application, we dockerized our backend system and ran it on a containerized environment using Docker. By utilizing these technologies and Docker, we were able to build a backend system that was efficient, scalable, and easy to deploy.
+Nginx is a popular open-source web server that is often used as a reverse proxy and load balancer. It is known for its high performance, scalability, and reliability, and is widely used in production environments to serve static and dynamic content, as well as to proxy requests to backend services.
+
+In the context of web development, Nginx is often used to improve the performance and reliability of web applications. For example, it can be used to cache static assets and serve them directly from memory, reducing the load on the backend server and improving response times for users. It can also be used to proxy requests to multiple backend servers, distributing the load evenly across them and ensuring that the application remains responsive and available even under high traffic.
+
+In the specific context of the project mentioned earlier, Nginx has been used to proxy requests to the frontend and backend servers, providing a simple and convenient way to access both servers through a single port. This allows the frontend and backend to communicate with each other seamlessly, while also ensuring that the application is easily accessible to users.
